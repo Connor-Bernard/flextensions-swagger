@@ -1,0 +1,11 @@
+services:
+    swagger:
+        image: "swaggerapi/swagger-ui:latest"
+        volumes:
+            - .:/opt/swagger 
+        environment:
+            - SWAGGER_JSON=/opt/swagger/swagger.json
+        ports:
+            - ${API_DOCS_PORT:-8080}:8080
+        restart: unless-stopped
+
