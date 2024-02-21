@@ -31,6 +31,15 @@ Please be sure to follow the current [OpenAPI specification](https://swagger.io/
 
 ## Deployment
 
+There are two deployment options but the first of which is highly recommended.
+
+### Deploying through git *(RECOMMENDED)*
+
+1. Ensure you have your heroku remote configured.
+2. Push master to heroku remote.
+
+### Manual Image Deploy with Docker
+
 1. Log into your local machine with Heroku.
 2. Make sure the latest build of the "flextensions/swagger" image is the image you wish to deploy.
 3. Run `make deploy` and follow the prompt.

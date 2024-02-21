@@ -6,7 +6,8 @@ docker:
 	@command -v docker > /dev/null 2>&1 || { printf $(_DANGER) "Please install Docker first." >&2; exit 1; }
 	@docker compose up || true
 
-deploy:
+# You sholdn't need to use this; pushing master to heroku should trigger a new deploy, but just in case, this is left in.
+deploy-manual:
 	@read -p "Are you sure you want to deploy the current image? [Y/n]: " ans && [ $${ans:-n} = Y ]
 	@printf $(_SUCCESS) "Beginning production swagger deploy"
 	@heroku whoami > /dev/null 2>&1 || { printf $(_DANGER) "Please log in with Heroku first." >&2; exit 1; }
