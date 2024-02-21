@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "title": "Flextentions API",
     "license": {
-      "name": "MIT"
+      "name": "BSD-2"
     }
   },
   "host": "petstore.swagger.io",
