@@ -1,6 +1,7 @@
 services:
     swagger:
-        image: "swaggerapi/swagger-ui:latest"
+        build: .
+        image: flextensions/swagger
         volumes:
             - .:/opt/swagger 
         environment:
@@ -8,4 +9,3 @@ services:
         ports:
             - ${API_DOCS_PORT:-8080}:8080
         restart: unless-stopped
-
