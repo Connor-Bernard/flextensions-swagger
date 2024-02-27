@@ -1,11 +1,19 @@
 services:
-    swagger:
+    swagger-ui:
         build: .
-        image: flextensions/swagger
-        volumes:
-            - .:/opt/swagger 
+        image: flextensions/swagger-ui
         environment:
             - SWAGGER_JSON_URL=${SWAGGER_JSON_URL:-https://sp24-04-flextensions-6b110b3023ee.herokuapp.com/api/v1/swagger}
         ports:
-            - ${API_DOCS_PORT:-8080}:8080
+            - ${SWAGGER_UI_PORT:-8080}:8080
+        restart: unless-stopped
+    swagger-editor:
+        image: swaggerapi/swagger-editor:latest
+        environment:
+            - URL=${SWAGGER_JSON_URL:-https://sp24-04-flextensions-6b110b3023ee.herokuapp.com/api/v1/swagger}
+            - URL_SWAGGER2_GENERATOR=null
+            - URL_OAS3_GENERATOR=null
+            - URL_SWAGGER2_CONVERTER=null
+        ports:
+            - ${SWAGGER_EDITOR_PORT:-8081}:8080
         restart: unless-stopped
