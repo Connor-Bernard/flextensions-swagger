@@ -5,7 +5,7 @@ services:
         volumes:
             - .:/opt/swagger 
         environment:
-            - SWAGGER_JSON=/opt/swagger/swagger.json
+            - SWAGGER_JSON_URL=${SWAGGER_JSON_URL:-https://sp24-04-flextensions-6b110b3023ee.herokuapp.com/api/v1/swagger}
         ports:
             - ${API_DOCS_PORT:-8080}:8080
         restart: unless-stopped

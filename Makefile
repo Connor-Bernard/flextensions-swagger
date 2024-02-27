@@ -4,7 +4,8 @@ _DANGER := "\033[31m[%s]\033[0m %s\n"
 
 docker:
 	@command -v docker > /dev/null 2>&1 || { printf $(_DANGER) "Please install Docker first." >&2; exit 1; }
-	@docker compose up || true
+	@docker compose up -d || true
+	@printf $(_SUCCESS) "Swagger docs are running."
 
 # You sholdn't need to use this; pushing master to heroku should trigger a new deploy, but just in case, this is left in.
 deploy-manual:

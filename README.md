@@ -25,9 +25,14 @@ make docker
 
 The default port of the doc site is `8080` but you can change this in an environment variable named `API_DOCS_PORT`.  You can specify this either by exporting it in your environment or by adding it to `/.env`.  You should then run the server as detailed above and access it on the specified port or `8080`.
 
+
+### Configuring for Development
+
+The base config will pull the swagger.json from the deployed spec, however you may want to instead reference the swagger.json in your local flextensions app.  To do this, set the environment variable `SWAGGER_JSON_URL` to point to the endpoint on your local app (eg: `http://localhost:3000/api/v1/swagger`).  Note: you have to have your local app running for this to work. 
+
 ## Contributing
 
-Please be sure to follow the current [OpenAPI specification](https://swagger.io/solutions/getting-started-with-oas/).  All changes to main should go through a standard review cycle and should be merged *AFTER* the functionality has been implemented in the api.  Please use [conventional commits](https://www.conventionalcommits.org/) for all commit messages to maintain readability.
+Please be sure to follow the current [OpenAPI specification](https://swagger.io/solutions/getting-started-with-oas/).  All changes to main should go through a standard review cycle and should be merged *AFTER* the functionality has been implemented in the api.  Please use [conventional commits](https://www.conventionalcommits.org/) for all commit messages to maintain readability.  Note, the swagger.json file is versioned in [the main flextensions repo](https://github.com/saasbook/flextensions) so changes should be made there and pushed to production to reflect changes.
 
 ## Deployment
 
