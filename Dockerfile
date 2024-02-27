@@ -1,4 +1,3 @@
 FROM swaggerapi/swagger-ui:latest
-COPY swagger.json /opt/swagger/
-ENV SWAGGER_JSON="/opt/swagger/swagger.json"
+ENV SWAGGER_JSON_URL=https://sp24-04-flextensions-6b110b3023ee.herokuapp.com/api/v1/swagger
 EXPOSE 8080
